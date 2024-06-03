@@ -1,0 +1,117 @@
+{%- if include.keys -%}
+  {%- assign keys = include.keys -%}
+{%- endif -%}
+
+{%- if include.field -%}
+  {%- assign field = include.field -%}
+{%- endif -%}
+
+<div class="page-segments">
+  <ul class="page-segments-list">
+    {% assign segmentsDict = {} %}
+    {% for key in keys %}
+      {% assign segments = key | split: '/' %}
+      {% assign currentKey = key %}
+      {% assign segmentSize = segments.size %}
+      {% assign lastSegment = segments[segmentSize | minus: 1] %}
+      {% assign indentation = segments.size | minus: 1 %}
+      {% unless segmentsDict[currentKey] %}
+        {% assign segmentsDict[currentKey] = true %}
+        <div class="segment-container" style="padding: 10px; margin-top: 10px; margin-left: {{ indentation | times: 20 }}px; {% if indentation == 0 %} border-top: 1px solid #ccc; {% endif %}"">
+          <h{{ indentation | plus: 1 }} class="segment-name">{{ segments[indentation] }}</h{{ indentation | plus: 1 }}>
+          {% assign items = site.posts | where: field, currentKey %}
+          {% for item in items %}
+            {% if item != nil %}
+              <ul>
+                <li> {% include views/post-item.html %} </li>
+              </ul>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</div>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree View</title>
+  <style>
+    .segment-container {
+      padding: 10px;
+      margin-top: 10px;
+      border-left: 1px solid #ccc;
+    }
+    .segment-name {
+      cursor: pointer;
+      user-select: none;
+    }
+    .nested {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .toggle::before {
+      content: "▶";
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .toggle.active::before {
+      content: "▼";
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-segments">
+  <ul class="page-segments-list">
+    {% assign segmentsDict = {} %}
+    {% for key in keys %}
+      {% assign segments = key | split: '/' %}
+      {% assign currentKey = key %}
+      {% assign segmentSize = segments.size %}
+      {% assign lastSegment = segments[segmentSize | minus: 1] %}
+      {% assign indentation = segments.size | minus: 1 %}
+      {% unless segmentsDict[currentKey] %}
+        {% assign segmentsDict[currentKey] = true %}
+        <div class="segment-container" style="margin-left: {{ indentation | times: 20 }}px; {% if indentation == 0 %} border-top: 1px solid #ccc; {% endif %}">
+          <h{{ indentation | plus: 1 }} class="segment-name toggle">{{ segments[indentation] }}</h{{ indentation | plus: 1 }}>
+          <div class="nested">
+            {% assign items = site.posts | where: field, currentKey %}
+            {% for item in items %}
+              {% if item != nil %}
+                <ul>
+                  <li> {% include views/post-item.html %} </li>
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        const nested = toggle.nextElementSibling;
+        if (nested) {
+          nested.classList.toggle('active');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html> -->
+

@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@domain.com
-author: GitHub User
+title: GoByeonghu's Blog
+email: byeonghugo@gmail.com
+author: GoByeonghu
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -147,19 +147,22 @@ yat:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-# header_pages:
-#   - index.html
-#   - archives.html
-#   - categories.html
-#   - tags.html
-#   - about.md
+header_pages:
+  - resume.md
+  - index.html
+  - categories_tree.html
+  - tags.html
+  # - categories.html
+  # - archives.html
+  # - about
+
 
 # Page default value
-# defaults:
-#   home:
-#     heading: "Your awesome heading"
-#     subheading: "Your awesome subheading"
-#     banner: "Your image url"
+defaults:
+  home:
+    heading: "나의 개발 아카이브:)"
+    subheading: "내가 기록한 나의 이력서, 프로젝트 개발 일지, CS 공부기록"
+    banner: "/assets/images/banners/home.jpeg"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
