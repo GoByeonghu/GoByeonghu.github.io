@@ -1,17 +1,27 @@
-- name: Project
-  children:
-    - name: ACA
-    - name: Decide4Me
-    - name: LectBox
-    - name: OpenSesame
-      children:
-        - name: OpenSesame/A
-    - name: Bottles
-      children:
-        - name: Bottles/A
 - name: CS
   children:
     - name: OS
     - name: Algorithm
+- name: WEB
+  children:
+    - name: Backend
       children:
-        - name: Test
+        - name: Spring
+        - name: Node.js
+        - name: Django
+    - name: Frontend
+      children:
+        - name: React.js
+- name: Project
+  children:
+    - name: ACA
+    - name: Decide4Me
+    - name: tteodeulX2
+    - name: Intrusion-Detection-System
+    - name: OpenSesame
+    - name: LectBox
+      children:
+        - name: LectBox/Issue
+    - name: Bottles
+      children:
+        - name: Bottles/Issue
