@@ -2,7 +2,8 @@
 layout: post
 title: Linux 명령어
 subtitle: Linux에서 자주 사용되는 명령어 정리
-categories: CS/OS
+categories: 
+  - OS
 tags: [linux]
 ---
 
@@ -62,10 +63,9 @@ tags: [linux]
 > GPG 키란 :  GNU Privacy Guard(GPG)에서 사용하는 암호화 키입니다. GPG는 데이터 통신과 파일을 암호화하고 서명하는 데 사용되는 소프트웨어로, 개인 정보 보호 및 데이터 무결성을 보장한다.
 
 <details>
+  <summary> 사용예시(톰캣과 Nginx설치) </summary>
+  <div markdown="1">
 
-  <summary>사용예시(톰캣과 Nginx설치)</summary>
-
-  
   ```bash
   # apt에 java zulu repository의 인증키를 추가한다
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ~~
@@ -151,6 +151,5 @@ tags: [linux]
   ```bash
   sudo service nginx restart
   ```
-
-
+  </div>
 </details>

@@ -1,0 +1,27 @@
+{% for category in include.categories %}
+  {% assign categoryName = category.name | split: '/' | last %}
+  {% if categoryName %}
+    <li>
+        <details>
+
+            <summary id="{{ categoryName }}" class="segment-name"> {{ categoryName }} </summary>
+            
+            {% assign items = site.posts | where: "categories", category.name %}
+            {% if items.size > 0 %}
+                <ul>
+                {% for item in items %}
+                    <li>{% include views/post-item.html %}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if category.children %}
+                <ul>
+                {% include functions/category-recursive.html categories=category.children %}
+                </ul>
+            {% endif %}
+
+        </details>
+    </li>
+  {% endif %}
+{% endfor %}

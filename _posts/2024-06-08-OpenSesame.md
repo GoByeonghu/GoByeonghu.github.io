@@ -2,7 +2,8 @@
 layout: post
 title: OpenSesame
 subtitle: ARM TrustZone을 활용한 보안 도어락
-categories: Project/OpenSesame
+categories: 
+    - OpenSesame
 tags: [c, OpenSSL, OP-TEE, ARMTrustzone, PGP, ubuntu]
 ---
 

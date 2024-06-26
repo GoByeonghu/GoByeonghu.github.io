@@ -2,7 +2,8 @@
 layout: post
 title: Intrusion-Detection-System
 subtitle: Intrusion Detection System(Yolo 알고리즘을 이용한 침입자 감지 시스템)
-categories: Project/Intrusion-Detection-System
+categories: 
+    - Intrusion-Detection-System
 tags: [django ,DRF, python, Yolo, Pytorch, ai]
 ---
 

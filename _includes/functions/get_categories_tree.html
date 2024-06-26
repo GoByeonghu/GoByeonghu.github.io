@@ -1,17 +1,12 @@
-{% assign categories_tree = {} %}
-{% assign split_mark = '/' %}
+{% assign split_mark = '<|>' %}
 
+{% assign categories = '' %}
 {% for category in site.categories %}
-  {% assign category_name = category[0] %}
-  {% assign category_levels = category_name | split: split_mark %}
-  {% assign current_node = categories_tree %}
-  
-  {% for level in category_levels %}
-    {% unless current_node[level] %}
-      {% assign current_node[level] = {} %}
-    {% endunless %}
-    {% assign current_node = current_node[level] %}
-  {% endfor %}
+  {% assign name = category | first %}
+  {% assign categories = categories | append: split_mark  | append: name %}
 {% endfor %}
 
-{% assign return = categories_tree %}
+{% assign return = categories
+  | remove_first: split_mark
+  | split: split_mark
+  | sort: self %}

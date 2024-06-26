@@ -150,9 +150,9 @@ lang: "ko"  # default lang is en
 header_pages:
   - resume.md
   - index.html
-  - categories.html
+  - categories-tree.html
   - tags.html
-  # - categories_tree.html
+
   # - categories_tree_new.html
   # - categories.html
   # - archives.html

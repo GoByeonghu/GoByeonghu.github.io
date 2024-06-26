@@ -1,0 +1,13 @@
+---
+layout: framework
+sidebar: category-list
+---
+
+{% assign split_mark = '<|>' %}
+{% assign categories = site.data.categories %}
+
+<div class="page-segments">
+  <ul class="page-segments-list">
+    {% include functions/category-recursive.html categories=categories %}
+  </ul>
+</div>

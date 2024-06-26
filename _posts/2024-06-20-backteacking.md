@@ -2,7 +2,8 @@
 layout: post
 title: 백트레킹(Backtracking)
 subtitle: Backtracking에 대해 알아보자
-categories: CS/Algorithm
+categories: 
+  - Algorithm
 tags: [backtracking]
 ---
 

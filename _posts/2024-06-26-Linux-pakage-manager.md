@@ -2,7 +2,8 @@
 layout: post
 title: Linux 패키지 관리자
 subtitle: Linux 기반 OS에서 사용가능한 패키지 관리자
-categories: CS/OS
+categories: 
+  - OS
 tags: [linux]
 ---
 
