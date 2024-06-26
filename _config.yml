@@ -43,9 +43,9 @@ author: GoByeonghu
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  나의 이력서와 프로젝트 개발일지를 포함하여 IT 및 개발 지식을 다루는 사이트입니다.
+  개인적인 경험과 기술적인 인사이트를 공유하며, 소프트웨어 개발과 관련된 다양한 주제를 탐구합니다.
+  새로운 기술과 도구에 대한 실험과 배움을 기록합니다.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
@@ -73,7 +73,7 @@ yat:
 # sitemap: false
 
 # If you want to change site language, you can set lang option
-# lang: "en"  # default lang is en
+lang: "ko"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -150,8 +150,10 @@ yat:
 header_pages:
   - resume.md
   - index.html
-  - categories_tree.html
+  - categories.html
   - tags.html
+  # - categories_tree.html
+  # - categories_tree_new.html
   # - categories.html
   # - archives.html
   # - about
