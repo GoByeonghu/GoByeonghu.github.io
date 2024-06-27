@@ -25,6 +25,8 @@
     - name: ACA
     - name: Decide4Me
     - name: tteodeulX2
+      children:
+        - name: tteodeulX2/Issue
     - name: Intrusion-Detection-System
     - name: OpenSesame
     - name: LectBox
