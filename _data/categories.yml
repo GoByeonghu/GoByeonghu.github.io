@@ -12,6 +12,14 @@
     - name: Frontend
       children:
         - name: React.js
+- name: Database
+  children:
+    - name: MySQL
+- name: Languages
+  children:
+    - name: Java
+    - name: C++
+- name: ETC
 - name: Project
   children:
     - name: ACA
