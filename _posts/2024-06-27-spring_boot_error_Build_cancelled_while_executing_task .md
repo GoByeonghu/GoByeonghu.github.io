@@ -11,7 +11,7 @@ tags: [spring]
 
 ### 에러메시지
 
-![error message](assets/2024-06-27-spring_boot_errorBuild_cancelled_while_executing_task_/1.png)
+![error message]({{site.url}}/PostImages/2024-06-27-spring_boot_errorBuild_cancelled_while_executing_task_/1.png)
 
 ```
 Execution failed for task ':RestAPIApplication.main()'.
@@ -38,12 +38,12 @@ BUILD FAILED in 1m
 
 - file - setting - Build, Excution, Deployment - Build Tools - Gradle 진입
 
-    ![error message](assets/2024-06-27-spring_boot_errorBuild_cancelled_while_executing_task_/2.png)
+    ![error message]({{site.url}}/PostImages/2024-06-27-spring_boot_errorBuild_cancelled_while_executing_task_/2.png)
 
 
 - 둘다 'IntelliJ IDEA'로 변경
 
-    ![error message](assets/2024-06-27-spring_boot_errorBuild_cancelled_while_executing_task_/3.png)
+    ![error message]({{site.url}}/PostImages/2024-06-27-spring_boot_errorBuild_cancelled_while_executing_task_/3.png)
 
 
 

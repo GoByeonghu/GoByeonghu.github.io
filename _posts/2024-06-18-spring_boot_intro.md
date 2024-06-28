@@ -87,9 +87,9 @@ tags: [spring]
 
 - 구조
 
-    ![spring embeded server](assets/2024-06-18-spring_boot_intro/1.png)
+![spring embeded server]({{site.url}}/PostImages/2024-06-18-spring_boot_intro/1.png)
 
-    <details>
+  <details>
     <summary>Details</summary>
     <div markdown="1">
 
@@ -114,7 +114,7 @@ tags: [spring]
     10. 뷰(View): 최종적으로 결정된 뷰를 통해 사용자에게 응답이 전송됩니다.
 
     </div>
-    </details>
+  </details>
 
     <br/>
 
