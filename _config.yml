@@ -48,7 +48,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   새로운 기술과 도구에 대한 실험과 배움을 기록합니다.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://gobyeonghu.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
