@@ -89,9 +89,9 @@ tags: [spring]
 
 ![spring embeded server]({{site.url}}/PostImages/2024-06-18-spring_boot_intro/1.png)
 
-  <details>
-    <summary>Details</summary>
-    <div markdown="1">
+<details>
+  <summary>Details</summary>
+  <div markdown="1">
 
     1. 사용자(User): 사용자가 웹 애플리케이션에 요청을 보냅니다.
 
@@ -113,10 +113,10 @@ tags: [spring]
 
     10. 뷰(View): 최종적으로 결정된 뷰를 통해 사용자에게 응답이 전송됩니다.
 
-    </div>
-  </details>
+  </div>
+</details>
 
-    <br/>
+
 
 ### 자동 설정(Auto Configuration) 
 
