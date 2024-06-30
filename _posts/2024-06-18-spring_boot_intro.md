@@ -93,25 +93,25 @@ tags: [spring]
   <summary>Details</summary>
   <div markdown="1">
 
-    1. 사용자(User): 사용자가 웹 애플리케이션에 요청을 보냅니다.
+1. 사용자(User): 사용자가 웹 애플리케이션에 요청을 보냅니다.
 
-    2. 임베디드 웹 서버(Embedded Web Server): 스프링부트의 내장 웹 서버(Tomcat, Jetty, Undertow)가 요청을 받아들입니다.
+2. 임베디드 웹 서버(Embedded Web Server): 스프링부트의 내장 웹 서버(Tomcat, Jetty, Undertow)가 요청을 받아들입니다.
 
-    3. 서블릿(Servlet): 내장 웹 서버는 서블릿 컨테이너를 통해 요청을 처리합니다.
+3. 서블릿(Servlet): 내장 웹 서버는 서블릿 컨테이너를 통해 요청을 처리합니다.
 
-    4. 디스패처 서블릿(DispatcherServlet): 서블릿 컨테이너는 요청을 스프링의 DispatcherServlet으로 전달합니다. DispatcherServlet은 요청의 중심 허브 역할을 합니다.
+4. 디스패처 서블릿(DispatcherServlet): 서블릿 컨테이너는 요청을 스프링의 DispatcherServlet으로 전달합니다. DispatcherServlet은 요청의 중심 허브 역할을 합니다.
 
-    5. 핸들러 매핑(HandlerMapping): DispatcherServlet은 HandlerMapping을 사용하여 어떤 컨트롤러가 요청을 처리할지 결정합니다.
+5. 핸들러 매핑(HandlerMapping): DispatcherServlet은 HandlerMapping을 사용하여 어떤 컨트롤러가 요청을 처리할지 결정합니다.
 
-    6. 컨트롤러(@Controller): 핸들러 매핑에 따라 요청을 처리할 컨트롤러가 결정되고, 해당 컨트롤러가 요청을 처리합니다.
+6. 컨트롤러(@Controller): 핸들러 매핑에 따라 요청을 처리할 컨트롤러가 결정되고, 해당 컨트롤러가 요청을 처리합니다.
 
-    7. 서비스 레이어(Service Layer): 컨트롤러는 비즈니스 로직을 처리하기 위해 서비스 레이어를 호출합니다.
+7. 서비스 레이어(Service Layer): 컨트롤러는 비즈니스 로직을 처리하기 위해 서비스 레이어를 호출합니다.
 
-    8. 레포지토리 레이어(Repository Layer): 서비스 레이어는 데이터베이스 작업을 위해 레포지토리 레이어를 호출합니다.
+8. 레포지토리 레이어(Repository Layer): 서비스 레이어는 데이터베이스 작업을 위해 레포지토리 레이어를 호출합니다.
 
-    9. 뷰 리졸버(ViewResolver): 요청 처리 후, DispatcherServlet은 ViewResolver를 사용하여 응답할 뷰를 결정합니다.
+9. 뷰 리졸버(ViewResolver): 요청 처리 후, DispatcherServlet은 ViewResolver를 사용하여 응답할 뷰를 결정합니다.
 
-    10. 뷰(View): 최종적으로 결정된 뷰를 통해 사용자에게 응답이 전송됩니다.
+10. 뷰(View): 최종적으로 결정된 뷰를 통해 사용자에게 응답이 전송됩니다.
 
   </div>
 </details>
