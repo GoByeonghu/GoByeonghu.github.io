@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot and Data(미완성)
 subtitle: Spring Boot에서 데이터를 다루는 방법
 categories: 
-    - spring
+    - Spring
 tags: [spring]
 ---
 

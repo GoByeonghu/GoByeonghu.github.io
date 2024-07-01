@@ -3,7 +3,7 @@ layout: post
 title: Bean 살펴보기
 subtitle: bean의 생명주기, 스코프를 알아보자
 categories: 
-  - spring
+  - Spring
 tags: [spring]
 ---
 
