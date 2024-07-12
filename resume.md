@@ -8,7 +8,8 @@ categories: AboutMe
   <img src="assets/images/profile/gbh.jpg" alt="Profile Image" style="width: 100%; height: auto;">
 </div>
 
-# 고병후 Go Byeonghu
+## 고병후 Go Byeonghu
+## Backend Developer
 📅 1998.03.25  
 📍 Incheon, Korea  
 
@@ -63,7 +64,6 @@ categories: AboutMe
 - Database Management: **MySQL**
 - Infrastructure: **AWS EC2**
 - Version Control: **Git**, **GitHub**
-- **Agile Development Methodologies**
 
 
 ## Experienced Skills
@@ -87,9 +87,9 @@ categories: AboutMe
 
 ***대학생을 위한 공유드라이브***
 
-`기간` 2022.03~2022.06
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aDn9ul5CLJE?si=X0Q7yYaWVrgXF4Yd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-`목적` 경희대학교 컴퓨터공학과 클라우트컴퓨팅 강의 프로젝트
+`기간` 2022.03~2022.06
 
 `내용` 
 
@@ -104,9 +104,16 @@ categories: AboutMe
 
 `인원` 5명 (FE 2명, BE 3명)
 
-`역할` 백엔드 개발 및 AWS를 이용한 배포 담당
+`역할` 
+- 백엔드 개발
+- AWS를 이용한 배포
+- DB 설계
 
-`사용 기술` Django, EC2, S3, CloudFront
+`사용 기술` 
+- Back-End: Django, DRF, Amazon EC2
+- Database: SQLite3
+- Front-End: React, Amazon S3 & CloudFront 
+- Storage: Amazon S3
 
 `GitHub` [https://github.com/GoByeonghu/LectBox_back](https://github.com/GoByeonghu/LectBox_back)
 
@@ -118,22 +125,36 @@ categories: AboutMe
 
 `기간` 2022.09~2022.12
 
-`목적` 경희대학교 컴퓨터공학과 캡스톤디자인1
-
-`특징` 2022 한국소프트웨어종합학술대회 논문등록 및 발표자 선정작
+`특징` 2022 한국소프트웨어종합학술대회 제1저자 논문등록 및 발표자 선정작
 
 `내용` 
 
 키패드를 누르지 않아도 동작하거나 스마트폰과 연동하여 잠금을 해제하는 등의 기능을 하는 스마트 도어락을 보안성 있게 설계한 프로젝트입니다.
 보안 성능을 높인 스마트 도어락의 구현을 위해 ARM TrustZone을 사용하여 일반 실행 영역인 REE와 보안 실행 영역인 TEE를 구분하여 부팅하고 기능을 그 민감성에 따라 분리하여 배치해 설계하였습니다. 또한 하드웨어적 기반이 다른 모바일 기기와 IoT 기기 두 단말의 TrustZone 간의 보안성을 확보한 통신 방식을 설계하기 위해 PGP를 도입하였습니다.
 
+`아키텍처`
+
+- Mobile system architecture overview
+
+![image](https://github.com/capstone1-OpenSesame/OpenSesame/assets/92240138/c0d440b8-88e7-4c40-9127-6b06b9cab693)
+
+- Mobile system architecture overview
+
+![image](https://github.com/capstone1-OpenSesame/OpenSesame/assets/92240138/01ad2ffa-46fb-438e-b474-fe6be7cc2992)
+
+
 `인원` 2명
 
 `역할` 
+- OpenSSL을 이용한 사용자 정보 암복호화 모듈 및 사용자 명령 유효성 판단 컴포넌트 개발
+- 비대칭키(RSA)로 인증을 수행하고 해쉬(sha256)로 무결성을 보장하며 대칭키(AES)로 기밀성을 부여하는 PGP 구현
+- 사용기술 연구 및 아키텍쳐 설계
 
-OpenSSL을 이용한 사용자 정보 암복호화 모듈 및 사용자 명령 유효성 판단 컴포넌트 개발하였습니다. 본 컴포넌트는 사용자가 문을 여닫는 명령을 보낼 때  비대칭키(RSA)로 인증을 수행하고 해쉬(sha256)로 무결성을 보장하며 대칭키(AES)로 기밀성을 부여하는 기능을 하는 모듈입니다.
-
-`사용 기술` C, Ubuntu, WIFI Ad-Hoc, OpenSSL	
+`사용 기술` 
+- Language: C
+- OS: Ubuntu20.04 LTS
+- Communication Method:  WIFI Ad-Hoc 
+- Library: OpenSSL
 
 `GitHub` [https://github.com/GoByeonghu/OpenSesame](https://github.com/GoByeonghu/OpenSesame)
 
@@ -143,9 +164,9 @@ OpenSSL을 이용한 사용자 정보 암복호화 모듈 및 사용자 명령 �
 
 ***익명 고민상담 SNS***
 
-`기간` 2023.09~2024.02
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qV8Ypq2U-DE?si=BYnQ10R0Z08WNDOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-`목적` 개인프로젝트
+`기간` 2023.09~2024.02
 
 `내용` 
 
@@ -154,7 +175,6 @@ OpenSSL을 이용한 사용자 정보 암복호화 모듈 및 사용자 명령 �
 서로 간에 실시간 채팅을 수행할 수 있습니다.
 
 `주요기능`
-
 - 유저간 팔로우 가능
 - 이미지, 비디오, 텍스트로 자유롭게 순서와 내용을 구성한 피드 생성 가능
 - 유저 아이디 기반 검색 및 자동완성 검색어 추천 기능
@@ -163,9 +183,24 @@ OpenSSL을 이용한 사용자 정보 암복호화 모듈 및 사용자 명령 �
 
 `인원` 5명 (BE 2명, FE 2명, Android 1명)
 
-`역할` REST API 서버 개발, 실시간 채팅 개발, DB관리, 배포 담당	
+`역할` 
+- REST API 서버 개발
+- Websocket 실시간 채팅 개발
+- DBA 
+- 백엔드 배포 담당
+- 도메인 네임 연결 및 HTTPS, WSS 연결 관리
 
-`사용 기술` Django, MySQL, Nginx, WebSocket
+`문서`
+
+[API 문서 다운로드](https://github.com/SFZ-Bottles/Bottles_BE/files/14855737/Bottles.rest.API.ver.1.2.0.pdf)
+
+[DB 문서 다운로드](https://github.com/SFZ-Bottles/Bottles_BE/files/14855850/Bottles_DB.Modeling.ver.1.2.0.pdf)
+
+`사용 기술`
+- Back-End: Django, DRF, Amazon EC2,  Nginx
+- Database: MySQL
+- Front-End: React, Amazon S3 & CloudFront 
+- Communication Method: WebSocket
 
 `GitHub` [https://github.com/GoByeonghu/Bottles_BE](https://github.com/GoByeonghu/Bottles_BE)
 
@@ -177,16 +212,25 @@ OpenSSL을 이용한 사용자 정보 암복호화 모듈 및 사용자 명령 �
 
 `기간` 2024.05~2024.06
 
-`목적` 카카오 클라우드스쿨 프로젝트
+`내용` 
 
-`내용` 사용자가 결정이 고민되는 사안에 대하여 원하는 만큼의 선택지를 두고 데드라인을 설정하여 게시글을 올리면 다른 유저가 투표를 진행하고,
+사용자가 결정이 고민되는 사안에 대하여 원하는 만큼의 선택지를 두고 데드라인을 설정하여 게시글을 올리면 다른 유저가 투표를 진행하고,
 데드라인을 넘어가면 최다 득표를 표기하는 결정도움 사이트입니다.
 
 `인원` 1명
 
-`역할` 풀스텍 개발, DB관리, 배포
+`역할` 
+- 기획
+- Spring 이용한 백엔드 개발
+- Spring Security 이용한 인증 인가 개발
+- React 이용한 프론트엔드 개발
+- DBA
+- Docker 관리
 
-`사용 기술` Spring Boot, Spring Security, JPA, Redis
+`사용 기술` 
+- Back-End: Spring Boot, Spring Security, JPA,  Nginx
+- Database: MySQL, Redis
+- Front-End: React
 
 `GitHub` [https://github.com/GoByeonghu/Decide4Me_BE](https://github.com/GoByeonghu/Decide4Me_BE)
 
