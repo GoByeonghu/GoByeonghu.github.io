@@ -123,12 +123,17 @@ Content-Type: application/json
 
 ## Flowchart
 
-```mermaid
-graph TD
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({startOnLoad:true});
+</script>
+
+<div class="mermaid">
+  graph TD
     A[정해진 시간에 강아지 이미지 연산] --> B[사람 얼굴 이미지 요청 시 유사도 연산]
     B --> C[비율 기반 유사도 연산]
     C --> D[성향 기반 후보 필터링]
     D --> E[필터링된 후보 중 얼굴 유사도 분석]
     E --> F[가장 높은 유사도 보이는 강아지 ID 응답]
-```
+</div>
 

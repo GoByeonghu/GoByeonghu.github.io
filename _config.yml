@@ -49,7 +49,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gobyeonghu.github.io" # the base hostname & protocol for your site, e.g. https://example.com
-favicon: "" # the favicon for your site
+favicon: "/assets/favicon/favicon.ico" # the favicon for your site
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -152,11 +152,6 @@ header_pages:
   - index.html
   - categories-tree.html
   - tags.html
-
-  # - categories_tree_new.html
-  # - categories.html
-  # - archives.html
-  # - about
 
 
 # Page default value

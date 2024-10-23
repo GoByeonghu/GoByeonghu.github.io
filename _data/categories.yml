@@ -11,7 +11,9 @@
         - name: Django
     - name: Frontend
       children:
+        - name: HTML
         - name: React.js
+        - name: CSS
 - name: Database
   children:
     - name: MySQL
