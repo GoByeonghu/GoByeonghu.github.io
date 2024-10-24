@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenSesame
+title: "[프로젝트] OpenSesame"
 subtitle: ARM TrustZone을 활용한 보안 도어락
 categories: 
     - OpenSesame

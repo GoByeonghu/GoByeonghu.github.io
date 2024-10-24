@@ -39,6 +39,7 @@ tags: [ai,vision]
 
    
 2. 얼굴 인식 모델 파인 튜닝
+   
     [face recognization](https://www.nature.com/articles/s41598-023-49522-2)
     
     [ArcFace](https://butter-shower.tistory.com/237)
