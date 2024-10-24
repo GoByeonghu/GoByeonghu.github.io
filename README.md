@@ -1,12 +1,3 @@
----
-layout: post
-title: "[프로젝트] Blog"
-subtitle: Jekyll과 GitHub Pages를 사용한 블로그
-categories: 
-    - Blog
-tags: [jekyll, ruby, github pages]
----
-
 # GoByeonghu's Blog
 
 This repository hosts a personal blog powered by **Jekyll** and deployed through **GitHub Pages**. The blog features a customized user interface with a toggleable, tree-structured category layout for easy navigation.
