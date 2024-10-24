@@ -1,0 +1,41 @@
+- name: CS
+  children:
+    - name: OS
+    - name: Algorithm
+- name: WEB
+  children:
+    - name: Backend
+      children:
+        - name: Spring
+        - name: Node.js
+        - name: Django
+    - name: Frontend
+      children:
+        - name: HTML
+        - name: React.js
+        - name: CSS
+- name: Database
+  children:
+    - name: MySQL
+- name: Languages
+  children:
+    - name: Java
+    - name: C++
+- name: ETC
+- name: Project
+  children:
+    - name: ACA
+    - name: Decide4Me
+    - name: tteodeulX2
+      children:
+        - name: tteodeulX2/Issue
+    - name: Intrusion-Detection-System
+    - name: OpenSesame
+    - name: LectBox
+      children:
+        - name: LectBox/Issue
+    - name: Bottles
+      children:
+        - name: Bottles/Issue
+    - name: OceanAcademy
+    - name: Blog
