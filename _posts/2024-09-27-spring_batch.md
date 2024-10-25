@@ -113,3 +113,11 @@ public class BatchConfiguration {
 - Spring Batch는 대량 데이터 처리나 복잡한 트랜잭션 관리가 필요한 경우에 적합하며, 오류 처리 및 상태 추적을 자동화할 수 있다.
 
 작업의 복잡도와 규모에 따라 두 가지 중 적합한 방식을 선택하면 된다.
+
+
+
+
+
+[5점버전대 돌아가는 코드](https://velog.io/@asdf-dev/spring-boot-batch)
+
+[테이블 생성오류](https://velog.io/@ryuneng2/Spring-Batch-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B0%B0%EC%B9%98-Table-xxx.BATCHJOBINSTANCE-doesnt-exist-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95)
