@@ -40,27 +40,27 @@ tags: [webrtc]
 
 <br/>
 
-## 요약
-- **기간:** 2023.08.01 ~ 2024.02.01
-- **사용 도구:** django, DRF, python3, AWS, EC2, S3, CloudFront
+### 요약
+- **기간:** 2024.07.25 ~ 2024.10.04
+- **사용 도구:** Spring Boot, Spring Security, Spring Batch, node.js, MySQL, Redis, EC2, S3
 - **FE깃헙 리파지토리:** [FE 깃헙 리파지토리 링크](https://github.com/100-hours-a-week/5-nemo-oceanAcademy-fe)
 - **BE깃헙 리파지토리:** [BE 깃헙 리파지토리 링크](https://github.com/100-hours-a-week/5-nemo-oceanAcademy-be)
 - **미디어중계서버 리파지토리:** [BE 깃헙 리파지토리 링크](https://github.com/100-hours-a-week/5-nemo-oceanAcademy-be-webrtc)
 
-## 역할
+### 역할
 
 - **Spring Boot를 이용한 REST API 서버 구현**
 - **인기 강의 스코어를 연산하는 배치 시스템 개발**
 - **미디어 중계 서버 개발**
 
-## 성과
+### 성과
 
-- **Redis Cache 도입으로 API 응답 시간 <span style="color:blue">837ms</span> > <span style="color:blue">228ms</span> (<span style="color:blue">3.7배</span> 개선)**
+- **Redis Cache 도입으로 API 응답 시간 <span style="color:#004aad">837ms</span> > <span style="color:#004aad">228ms</span> (<span style="color:#004aad">3.7배</span> 개선)**
 - **Presigned URL 도입으로 서버의 Network IO <span style="color:#004aad">50KB</span> 기준 <span style="color:#004aad">91%</span> 절감**
 - **Mediasoup 중계 서버 도입으로 동시 참여 유저 수 <span style="color:#004aad">11.4배</span> 증가**
 
 
-## About the Project
+### About the Project
 
 본 프로젝트는 오프라인 교육의 실시간 소통 장점과 온라인 플랫폼의 접근성을 결합
 한 라이브 강의 플랫폼을 개발하는 것을 목표로 한다. 또한, WebRTC 기반의 미디어 전
@@ -70,23 +70,24 @@ tags: [webrtc]
 <br>궁극적으로, **본 프로젝트는 학습자들이 언제 어디서나 원활한 환경에서 교육에 집중
 할 수 있도록 하여 더 나은 학습 경험을 제공하는 것을 지향한다.**
 
-## Technologies
-### Database
-- [MySQL](https://www.mysql.com/) 8.12
-- [Redis](https://redis.io/) 6.2.6
-### Backend  
-- [Spring Boot](https://spring.io/) 3.3.2
-- [Spring Security](https://spring.io/projects/spring-security) 6.2.1
-- [Spring Batch](https://spring.io/projects/spring-batch) 5.1.0
-### Media Server
-- [Node.js](https://nodejs.org/) 14.17.3
-- [Express](https://expressjs.com/) 4.16.4
-- [Mediasoup](https://mediasoup.org/) 3.0.0
-### Frontend
-- [React.js](https://ko.legacy.reactjs.org/) 18.3.1
-- [TypeScript](https://www.typescriptlang.org/) 4.9.5
+### Technologies
 
-## Key Features
+- **Database**
+  - [MySQL](https://www.mysql.com/) 8.12
+  - [Redis](https://redis.io/) 6.2.6
+- **Backend**
+  - [Spring Boot](https://spring.io/) 3.3.2
+  - [Spring Security](https://spring.io/projects/spring-security) 6.2.1
+  - [Spring Batch](https://spring.io/projects/spring-batch) 5.1.0
+- **Media Server**
+  - [Node.js](https://nodejs.org/) 14.17.3
+  - [Express](https://expressjs.com/) 4.16.4
+  - [Mediasoup](https://mediasoup.org/) 3.0.0
+- **Frontend**
+  - [React.js](https://ko.legacy.reactjs.org/) 18.3.1
+  - [TypeScript](https://www.typescriptlang.org/) 4.9.5
+
+### Key Features
 
 1. **강의 탐색 및 수강 신청**
    
@@ -117,12 +118,12 @@ tags: [webrtc]
 ![ERD]({{site.url}}/PostImages/2024-10-22-OceanAcademy/ERD.png)
 
 
-### 데모영상
+### Demo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vAiGR7wuHDE?si=n7wtvJx-Y7rJ4D-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-## Contribution
+### Contribution
 - [고병후](https://github.com/GoByeonghu)
 - [장혜정](https://github.com/Ssun2zang)
 - [최유나](https://github.com/ehvzmf)
@@ -130,7 +131,7 @@ tags: [webrtc]
 - [김소희](https://github.com/judy-kimsohui)
 
 
-## Acknowledgement
+### Acknowledgement
 
 - [mediasoup-sample-app](https://github.com/mkhahani/mediasoup-sample-app)
 

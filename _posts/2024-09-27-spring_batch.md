@@ -118,6 +118,6 @@ public class BatchConfiguration {
 
 
 
-[5점버전대 돌아가는 코드](https://velog.io/@asdf-dev/spring-boot-batch)
+[5점 버전대 돌아가는 코드](https://velog.io/@asdf-dev/spring-boot-batch)
 
 [테이블 생성오류](https://velog.io/@ryuneng2/Spring-Batch-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B0%B0%EC%B9%98-Table-xxx.BATCHJOBINSTANCE-doesnt-exist-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95)
