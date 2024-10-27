@@ -3,7 +3,6 @@ layout: post
 title: 결과 이미지가 매일 달라지는 이미지 예측을 어떻게 수행할 것인가
 subtitle: 
 categories: 
-  - AI
   - Mungpy
 tags: [ai,vision]
 ---
