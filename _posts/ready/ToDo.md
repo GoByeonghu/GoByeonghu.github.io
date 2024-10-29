@@ -4,6 +4,8 @@
 
 스프링 프로필 & spring dotenv
 
+디자인패턴
+
 JPQL
 
 자바로 html
@@ -28,7 +30,20 @@ https://gdngy.tistory.com/183
 
 라이센스 종류
 
+웹 훅의 원리
 
+RTOS
+
+컨벤션
+-각케이스
+-sql
+-커밋
+-브랜치
+-pr
+
+메시지브로커
+
+자바 버츄얼스레드
 
 
 
