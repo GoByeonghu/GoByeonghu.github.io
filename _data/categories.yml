@@ -21,6 +21,7 @@
   children:
     - name: Java
     - name: C++
+    - name: Python
 - name: ETC
 - name: Project
   children:
