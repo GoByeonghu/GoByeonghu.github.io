@@ -2,6 +2,7 @@
   children:
     - name: OS
     - name: Algorithm
+    - name: Network
 - name: WEB
   children:
     - name: Backend
