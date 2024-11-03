@@ -31,7 +31,7 @@ tags: []
 
 #### 대상 리눅스
 
-- 우분투 버전: `ubuntu-22.04.5-live-server-arm64`
+- 우분투 버전: `ubuntu-20.04.5-live-server-arm64`
 - 사용 소프트웨어: `rufus-4.5.exe`
 
 
@@ -150,8 +150,6 @@ x86, x64, ARM64는 컴퓨터 아키텍처의 주요 세 가지 종류로, 각기
   ![linux1]({{site.url}}/PostImages/2024-10-18-ubuntu-on-laptop/linux1.png)
 
 
-
-
 2. **디스크 마운트 설정**
   ![linux2]({{site.url}}/PostImages/2024-10-18-ubuntu-on-laptop/linux2.png)
 
@@ -163,9 +161,171 @@ x86, x64, ARM64는 컴퓨터 아키텍처의 주요 세 가지 종류로, 각기
    설치가 완료되면 설치 디바이스를 제거하고 엔트를 누르라고 표시도니다. 본인의 경우 **디바이스를(USB)를 제거하지 않고 계속 진행해야 성공이 가능했다.**
 
 
+### 우분투 메모리 스왑설정(옵션)
+
+#### 1. 스왑 파일 확인
+
+스왑 파일이나 파티션이 존재하는지 확인한다. 다음 명령어를 실행한다.
+
+```
+sudo free -m  
+sudo swapon -s  
+```
+
+두 명령어를 실행했을 때 스왑 관련 내용이 보이지 않으면 다음 과정을 진행한다. 만약 스왑이 작동 중이라면 아래 명령어를 실행해 작동을 중지한다.
+
+```
+sudo swapoff -a  
+```
+
+#### 2. 스왑파일 생성
+
+스왑을 하기 위한 스왑파일을 생성한다. 다음 명령어를 실행한다.
+
+```
+sudo fallocate -l 2G /swapfile  
+```
+
+-l 뒤에는 스왑파일의 용량을 입력하면 된다. 2G를 입력하면 메모리 외에 추가로 2G의 가상 메모리를 사용할 수 있다. 이후 root 디렉터리에 스왑파일이 생성된다.
+
+스왑파일의 권한을 수정한 뒤, 해당 파일이 스왑으로 동작하도록 만든다.
+
+```
+sudo chmod 600 /swapfile # 권한 수정  
+sudo mkswap /swapfile    # 활성화 준비  
+sudo swapon /swapfile    # 활성화  
+```
+
+스왑 메모리가 생성되었지만, 이를 재부팅해도 계속 사용하려면 /etc/fstab 파일을 수정해야 한다. 해당 파일을 열어 아래 내용을 추가한다.
+
+```
+sudo nano /etc/fstab # 파일 편집  
+```
+
+#### 내용 추가
+
+```
+/swapfile swap swap defaults 0 0  
+```
+
+#### 3. 스왑 파일 삭제하는 방법
+
+스왑을 비활성화한다.
+
+```
+sudo swapoff -v /swapfile # 스왑 비활성화  
+sudo nano /etc/fstab      # 파일 실행 후 아래 라인 삭제  
+/swapfile swap swap defaults 0 0  
+sudo rm /swapfile # 스왑 파일 삭제  
+```
+
+### 인터넷 연결(Wi-Fi)
+
+#### 1.인터페이스 이름 확인
+
+```
+ip link show
+```
+
+혹은 아래의 방식으로 랜카드의 논리적 이름 확인(logical name)
+
+```
+sudo lshw -c network
+```
+
+
+```
+  *-network
+       description: Ethernet interface
+       product: Ethernet Connection (7) I219-V
+       vendor: Intel Corporation
+       physical id: **.*
+       bus info: pci@0000:00:**.*
+       logical name: wlp1s0
+       version: **
+       serial: **:**:**:**:**:**
+       size: 1Gbit/s
+       ...
+```
+
+
+#### 2.wifi  찾기
+
+```
+$ sudo ip link set wlan0 up
+$ sudo iw wlan0 scan > wifi_list
+```
+
+#### 3. netplant설정파일 vi로 오픈
+
+- 랜선인 경우
+
+```
+vi /etc/netplan/00-installer-config.yaml
+```
+
+- 와이파이인 경우
+
+```
+vi /etc/netplan/00-installer-config-wifi.yaml
+```
+
+>기타 다른 이름의 파일 일수 있으니 확인해 보자(50-cloud-init.yaml 등등)
+
+- 설정파일 변경(와아피아인 경우_00-installer-config-wifi.yaml)
+
+```yaml
+network:
+  version: 2
+  wifis:
+    wlp1s0:  # 무선 네트워크 인터페이스 이름
+      dhcp4: true
+      dhcp6: true
+      access-points:
+        "wifiname":     # 연결할 네트워크 SSID
+          password: "password"  # 네트워크 비밀번호
+
+```
+
+- (랜선인 경우_00-installer-config.yaml)
+
+```
+network:
+  ethernets:
+          wlp1s0:
+                  dhcp4: true
+  version: 2
+```
+
+#### 4. netplan 적용
+
+```
+sudo netplan apply
+```
+
+#### 5.인터넷 연결확인
+
+```
+ping -c 4 google.com
+```
+
+- 연결안되었으면
+
+```
+ping: google.com: Temporary failure in name resolution
+```
+
+- 서버 ip확인
+
+```
+ip a
+```
+
+
 ### 참조
 
 - [우분투 설치방법](https://www.whatwant.com/entry/notebook-ubuntu-server)
 - [우분투 안전모드, GNU 접속방법](https://seongduck.tistory.com/112)
 - [우분투 설치시 마운트 설정방법](https://gam1532.tistory.com/45)
 - [cpu 알아보기](https://blog.naver.com/PostView.naver?blogId=cjs0308cjs&logNo=223242935705)
+- [netplan 설정파일](https://andes-noh.github.io/blog/how%20%20to%20ubuntu%20ip%20setting/)
