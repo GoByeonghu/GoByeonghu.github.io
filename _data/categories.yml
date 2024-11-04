@@ -21,8 +21,10 @@
 - name: Languages
   children:
     - name: Java
-    - name: C++
     - name: Python
+    - name: C++
+    - name: C
+    - name: JavaScript
 - name: ETC
 - name: Project
   children:
