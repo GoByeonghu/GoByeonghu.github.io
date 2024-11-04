@@ -51,9 +51,19 @@ RTOS
 
 자바 버츄얼스레드
 
+Prometheus, Grafana
+
+Jemeter(load test)
+
 파이썬gil 게시물 GIL 내용 딥다이브
 
 프로세스 스레드 게시물 IPC내용 딥다이븐
+
+ngnix
+
+대용량 트레픽 처리
+
+PostgreSQL
 
 보안
 인프라 보안: ACL, 디도스
