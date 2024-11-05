@@ -18,6 +18,7 @@
 - name: Database
   children:
     - name: MySQL
+    - name: Redis
 - name: Languages
   children:
     - name: Java
