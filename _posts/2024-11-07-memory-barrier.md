@@ -1,6 +1,6 @@
 ---
 layout: post
-title: memory barrier)
+title: memory barrier
 subtitle: Definition and Usage of memory barrier in C
 categories: 
   - C
