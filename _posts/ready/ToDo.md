@@ -1,19 +1,26 @@
-## TODO
+## TOD
+
+RPC, GRPC
+
+가상환경, 아나콘다, 리콰이얼먼트, 도커 비교
+
+데몬이란
+
+도커딥다이브
+
+메시징 프로토콜
 
 자바(https://dev-coco.tistory.com/153)
 
 스프링(https://dev-coco.tistory.com/163)
 
+프로메테우스, 그라파나를 사용한 측정_Prometheus, Grafana
 
-프로메테우스, 그라파나를 사용한 측정
-
-제이미터를 사용한 로드테스트
+제이미터를 사용한 로드테스트_Jemeter(load test)
 
 로드벨런서
 
-이미지업/다운로드
-: 이미지를 서버 디스크저장,메모리저장,프리사인유알엘,
-+ 이미지 http 전송방법 선택지
+Base64같은 인코딩 내용 정리
 
 카테부 강의정리
 
@@ -33,14 +40,8 @@ JPQL
 
 딥다이브 들
 
-컴퓨터 리눅스로 바꾸기
-https://chatgpt.com/c/670dfd0a-999c-800c-8455-91a28848d6e5
-
 초당 가능한 도달시간
 https://chatgpt.com/c/67175622-4b0c-800c-8c0b-b20d0fa56762
-
-c++ 스마트포인터
-https://gdngy.tistory.com/183
 
 프로젝트
 :Decide4Me, tteduleX2
@@ -48,8 +49,6 @@ https://gdngy.tistory.com/183
 라이센스 종류
 
 웹 훅의 원리
-
-RTOS
 
 컨벤션
 -각케이스
@@ -62,9 +61,7 @@ RTOS
 
 자바 버츄얼스레드
 
-Prometheus, Grafana
-
-Jemeter(load test)
+개인정보처리방침, GDPR 등 웹사이트 혹은 앱이 지켜야할 규범들
 
 파이썬gil 게시물 GIL 내용 딥다이브
 
@@ -75,6 +72,10 @@ ngnix
 대용량 트레픽 처리
 
 PostgreSQL
+
+MSA
+
+쿠버네티스
 
 보안
 인프라 보안: ACL, 디도스
