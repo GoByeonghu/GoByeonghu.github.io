@@ -480,6 +480,9 @@ In-Memory Buffering은 데이터가 서버로 전송될 때 메모리에 저장�
   </div>
 </details>
 
+
+
+
 <details>
   <summary>예시 코드 (서버 - 스트림 방식)</summary>
   <div markdown="1">
@@ -517,6 +520,9 @@ In-Memory Buffering은 데이터가 서버로 전송될 때 메모리에 저장�
 </details>
 
 
+
+
+
 <details>
   <summary>예시 코드 (백엔드 - 멀티파트 방식)</summary>
   <div markdown="1">
@@ -541,6 +547,8 @@ In-Memory Buffering은 데이터가 서버로 전송될 때 메모리에 저장�
   ```
 
   </div>
+</details>
+
 
 ### 4.2. Direct-to-Disk Storage (디스크 직접 저장)
 
