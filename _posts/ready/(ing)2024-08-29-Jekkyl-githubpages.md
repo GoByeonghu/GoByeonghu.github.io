@@ -7,11 +7,6 @@ categories:
 tags: [spring, mysql]
 ---
 
-
-
-
-
-
 ## 동기
 
 이력서, 개발 공부 정리, 프로젝트 정리용 블로그가 필요했다.  
