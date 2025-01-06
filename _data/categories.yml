@@ -35,6 +35,7 @@
       children:
         - name: tteodeulX2/Issue
     - name: Intrusion-Detection-System
+    - name: Scan-To-Image-Predictor
     - name: OpenSesame
     - name: LectBox
       children:

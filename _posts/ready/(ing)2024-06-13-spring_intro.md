@@ -39,6 +39,7 @@ tags: [spring]
 ## Spring 초기 세팅 및 기본적인 사용방법
 
 ### 환경 세팅
+
 - gradle은 groovy사용
   - kts는 코틀린
   - groovy는 자바
@@ -216,13 +217,3 @@ public class CalculatorApplication {
 - spring을 사용하지 않았다면 main에서 구현체를 직접 인스턴스화한다. : 결합이 강해진다.
 
 - spring을 사용하면 컨테이너가 알아서 연결해줌으로 직접 인스턴스화 할 필요 없다.
-
-
-
-## 참고
-- 유용한 단축키
-  
-  - command + shift + . : 파인더에서 보기
-  - command + ; : 버전 바꾸기 설정 가능
-  - option + enter : 컨텍스트 메뉴
-  - command + l (?) : Show Context Menu(import 쉽게 한다.)

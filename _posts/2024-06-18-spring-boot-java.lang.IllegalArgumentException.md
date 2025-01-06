@@ -7,7 +7,7 @@ categories:
 tags: [spring]
 ---
 
-## 오류
+### 오류
 
 ```
 2024-07-04T13:06:23.447+09:00  WARN 41872 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from StreamWriteConstraints.getMaxNestingDepth())
@@ -67,42 +67,42 @@ java.lang.IllegalArgumentException: Name for argument of type [java.lang.String]
 
 ```
 
+### 원인
 
-## 원인
+**스프링 부트 3.2**부터 매개변수의 이름을 인식하지 못하는 문제가 발생한다. 이 문제는 **Build, Execution, Deployment** -> **Build Tools** -> **Gradle**에서 `Build and run using`을 `IntelliJ IDEA`로 선택한 경우에만 발생한다. Gradle로 선택한 경우에는 Gradle이 컴파일 시점에 해당 옵션을 자동으로 적용해준다.
 
-스프링 부트 3.2부터 매개변수의 이름을 인식하지 못하는 문제가 발생한다.
-이 문제는 Build, Execution, Deployment -> Build Tools -> Gradle에서
-Build and run using를 IntelliJ IDEA로 선택한 경우에만 발생한다. Gradle로 선택한 경우에는 Gradle이 컴파일 시점에 해당 옵션을 자동으로 적용해준다.
+주로 아래의 어노테이션을 사용할 때 문제가 발생한다:
+- `@RequestParam`
+- `@PathVariable`
+- `@Autowired`
+- `@ConfigurationProperties`
 
-주로 아래의 어노테이션을 사용할 때 문제가 발생
+### 해결 방법
 
-@RequestParam, @PathVariable, @Autowired, @ConfigurationProperties
+아래의 3가지 방법 중 하나를 수행
 
+#### 1. IntelliJ IDEA가 아닌 Gradle로 컴파일
 
+1. **Build, Execution, Deployment** -> **Build Tools** -> **Gradle**로 이동한다.
+2. `Build and run using`을 `gradle`로 설정한다.
 
-## 해결방법
-
-### 1. IntelliJ IDEA가 아닌 Gradle로 컴파일
-
-Build, Execution, Deployment -> Build Tools -> Gradle에서
-Build and run using를 gradle로 설정
-
-### 2.자바 컴파일러에 -parameters 옵션을 추가 
+### 2. 자바 컴파일러에 -parameters 옵션을 추가
 
 (스프링 부트 3.2부터 필수가 되었다.)
 
-IntelliJ IDEA에서 File -> Settings를 연다. (Mac은 IntelliJ IDEA -> Settings)
-Build, Execution, Deployment → Compiler → Java Compiler로 이동한다.
-Additional command line parameters라는 항목에 다음을 추가한다.
--parameters
-out 폴더를 삭제하고 다시 실행한다. 꼭 out 폴더를 삭제해야 다시 컴파일이 일어난다.
+1. IntelliJ IDEA에서 `File -> Settings`를 연다. (Mac은 `IntelliJ IDEA -> Settings`).
+2. **Build, Execution, Deployment** → **Compiler** → **Java Compiler**로 이동한다.
+3. `Additional command line parameters` 항목에 `-parameters`를 추가한다.
+4. `out` 폴더를 삭제하고 다시 실행한다. **꼭** `out` 폴더를 삭제해야 다시 컴파일이 일어난다.
 
-### 3.이름 명시
+#### 3. 이름 명시
 
-@RequestParam("username") String username
-@PathVariable("userId") String userId
-@Qualifier("memberRepository") MemberRepository memberRepository
+어노테이션에서 매개변수 이름을 명시한다:
+- `@RequestParam("username") String username`
+- `@PathVariable("userId") String userId`
+- `@Qualifier("memberRepository") MemberRepository memberRepository`
 
 
-## 참고
+
+### 참고
 [spring boot 공식문서](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
