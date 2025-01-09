@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring 시작하기
+title: Spring into
 subtitle: Spring 시작하기
 categories: 
     - Spring
