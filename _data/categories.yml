@@ -15,6 +15,7 @@
         - name: HTML
         - name: React.js
         - name: CSS
+- name: DevOps
 - name: Database
   children:
     - name: MySQL
