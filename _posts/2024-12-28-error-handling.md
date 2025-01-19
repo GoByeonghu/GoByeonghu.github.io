@@ -191,6 +191,12 @@ public void readFileWrapper() {
 위 코드에서 readFile 메서드는 IOException을 던질 수 있음을 throws로 명시하고 있다. 이를 호출한 readFileWrapper 메서드는 반드시 예외를 처리하거나, 더 상위로 전파해야 한다.
 
 
+### try-with-resources
+
+try-catch-finally와 다르게 try블록이 종료되면 자동으로 자원 해제를 수행한다.
+기존 처럼 따로 finally 구문이나 모든 catch 구문에 개발자가 명시적으로 종료 처리를 할 필요가 없다.
+
+
 ---
 
 ## C++의 예외처리

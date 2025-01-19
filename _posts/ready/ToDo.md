@@ -1,5 +1,13 @@
 ## TOD
 
+
+스프링cs면접질문
+https://dev-coco.tistory.com/163
+
+트렌젝셔널 어노테이션 붙은 함수가 안되는 경우(내부함수에서 호출해서 프록시를 못타는 경우)
+
+gc딥다이브
+
 c++, python 멀티스레딩
 
 계수 정렬(Counting Sort):
@@ -13,6 +21,7 @@ log2(𝑁!)번의 비교가 필요합니다.
 
 
 쿼리디에스엘
+GraphQL
 
 Fault Tolerance 방법
 
