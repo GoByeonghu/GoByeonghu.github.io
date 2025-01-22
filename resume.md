@@ -8,9 +8,23 @@ categories: AboutMe
     PDF 파일을 보려면 여기를 클릭하세요.
 </iframe>
 
-<object type="application/pdf" data="{PDF}" width="{폭}" height="{높이}">
-    <p>대체 콘텐츠입니다. 브라우저가 PDF 삽입을 지원하지 않거나 PDF 파일을 찾을 수 없습니다. <a href="{PDF}">직접 다운로드 해보기</a></p>
+<br/>
+<P>1</p>
+
+<object type="application/pdf" data="assets/resume.pdf" width="100%" height="600px">
+    <p>대체 콘텐츠입니다. 브라우저가 PDF 삽입을 지원하지 않거나 PDF 파일을 찾을 수 없습니다. <a href="https://gobyeonghu.github.io/assets/resume.pdf">직접 다운로드 해보기</a></p>
 </object>
+
+<br/>
+<P>2</p>
+
+<object type="application/pdf" data="https://gobyeonghu.github.io/assets/resume.pdf" width="100%" height="600px">
+    <p>대체 콘텐츠입니다. 브라우저가 PDF 삽입을 지원하지 않거나 PDF 파일을 찾을 수 없습니다. <a href="https://gobyeonghu.github.io/assets/resume.pdf">직접 다운로드 해보기</a></p>
+</object>
+
+
+<br/>
+<P>3</p>
 
 <div style="border-radius: 50%; overflow: hidden; width: 180px; height: 180px;">
   <img src="assets/images/profile/gbh.jpg" alt="Profile Image" style="width: 100%; height: auto;">
