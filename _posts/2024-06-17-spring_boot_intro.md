@@ -20,7 +20,6 @@ tags: [spring]
 
 - **프로덕션 준비:** 프로덕션 환경[1]에서 필요한 여러 설정과 도구들을 기본으로 제공
 
-
 - **의존성 관리:** 스타터(Starter) 패키지를 통해 필요한 의존성들을 쉽게 관리할
 
 
@@ -58,9 +57,78 @@ tags: [spring]
             <summary>Spring은 생성자 주입을 권장한다.</summary>
             <div markdown="1">
 
-            - 불변성 보장 
-            - 순환참조를 컴파일 타임에 잡아 낼 수 있다.
-            - 테스트 케이스 작성 시 목킹(Mocking) 하기도 쉽다.
+            의존성 주입 방식인 **생성자 주입**, **세터 주입**, **필드 주입** 모두 `@Autowired`를 사용할 수 있다. 하지만 방식에 따라 어노테이션을 적용하는 위치가 달라지고, 때로는 어노테이션 없이도 가능한 경우도 있다. 각각을 정리하면 다음과 같다.
+
+            1. 생성자 주입 (Constructor Injection)
+
+            - **어노테이션**: `@Autowired` (생략 가능, Spring 4.3 이상부터는 생성자가 1개일 경우 자동 주입)
+            - **특징**:  
+            - 가장 권장되는 방식.
+            - `final` 필드와 함께 사용할 수 있어 불변성을 보장.
+            - 의존성이 명확하게 드러남 (테스트, 유지보수 용이).
+
+            ```java
+            @Component
+            public class MyService {
+                private final MyRepository myRepository;
+
+                // Spring 4.3 이상이면 @Autowired 생략 가능
+                @Autowired
+                public MyService(MyRepository myRepository) {
+                    this.myRepository = myRepository;
+                }
+            }
+            ```
+
+            ---
+
+            1. 세터 주입 (Setter Injection)
+
+            - **어노테이션**: `@Autowired` (세터 메서드에 붙임)
+            - **특징**:  
+            - 선택적 의존성 주입에 유용 (`@Autowired(required = false)` 가능).
+            - 테스트 시 mock 객체를 쉽게 주입할 수 있음.
+            - 하지만 필드를 `final`로 선언할 수 없음 (불변성 ↓).
+
+            ```java
+            @Component
+            public class MyService {
+                private MyRepository myRepository;
+
+                @Autowired
+                public void setMyRepository(MyRepository myRepository) {
+                    this.myRepository = myRepository;
+                }
+            }
+            ```
+
+            1. 필드 주입 (Field Injection)
+
+            - **어노테이션**: `@Autowired` (필드에 직접 붙임)
+            - **특징**:  
+            - 코드가 간단하지만, 테스트가 어려워지고 유지보수가 힘듦.
+            - 의존성이 외부에 드러나지 않아 가독성이 떨어짐.
+            - 스프링 외부에서 객체를 생성할 경우 주입 불가.
+            - **비권장 방식**.
+
+            ```java
+            @Component
+            public class MyService {
+                @Autowired
+                private MyRepository myRepository;
+            }
+            ```
+
+            | 방식 | @Autowired 필요 여부 | 테스트 용이성 | 권장 여부 |
+            |------|---------------------|---------------|-----------|
+            | 생성자 주입 | 선택적 (`1개 생성자`면 생략 가능) | 매우 좋음 | ✅ 적극 권장 |
+            | 세터 주입   | 필수 (`@Autowired` 붙여야 함) | 좋음 | ⭕ 상황에 따라 사용 |
+            | 필드 주입   | 필수 | 나쁨 | ❌ 비권장 |
+
+
+            - 전통적인 DI 방식에서는 모두 `@Autowired`를 사용할 수 있다.
+            - **Spring Boot 2.x / Spring Framework 4.3+** 이상에서는 **생성자 주입이 가장 깔끔하고 안전**하며, 어노테이션도 생략 가능하므로 **권장된다**.
+            - 테스트 가능한 구조를 원한다면 **생성자 or 세터 주입**을 선택하는 것이 좋다.`
             
             </div>
             </details>
@@ -72,6 +140,102 @@ tags: [spring]
 <br/>
 
 ### Container
+
+**스프링 컨테이너(Spring Container)**는 스프링 프레임워크에서 핵심적인 역할을 하는 **객체 관리 및 의존성 주입(DI, Dependency Injection)** 기능을 제공하는 컴포넌트다. 이를 통해 스프링 애플리케이션의 **객체를 생성하고 관리**하며, 객체 간의 관계를 설정해준다.
+
+스프링 컨테이너는 **애플리케이션의 핵심 객체들을 생성, 조합, 관리**하는 역할을 하며, 이를 통해 **구성 요소들이 서로 의존하지 않고 독립적으로 동작**할 수 있도록 돕는다.
+
+#### 주요 개념
+1. **빈(Bean)**:
+   - 스프링 컨테이너는 애플리케이션의 객체들을 **빈(Bean)**이라고 부른다. 빈은 스프링에서 관리되는 객체를 말하며, `@Component`, `@Service`, `@Repository`, `@Controller` 등의 어노테이션을 통해 정의된다.
+   - 빈은 주로 **서비스, 리포지토리, 컨트롤러** 등의 역할을 하는 객체들이다.
+
+2. **의존성 주입(Dependency Injection, DI)**:
+   - 스프링 컨테이너의 핵심 기능 중 하나는 **의존성 주입(DI)**이다. 객체 간의 의존 관계를 스프링 컨테이너가 설정하고 관리해준다. 즉, 객체가 필요로 하는 다른 객체를 자동으로 주입해주는 방식이다.
+   - **생성자 주입**, **세터 주입**, **필드 주입** 등의 방식으로 의존성을 주입할 수 있다.
+
+3. **빈 팩토리(BeanFactory)**:
+   - `BeanFactory`는 스프링의 가장 기본적인 컨테이너로, 객체를 지연 로딩(lazy loading) 방식으로 관리한다. 빈을 실제로 사용하는 시점에 초기화된다.
+
+4. **애플리케이션 컨텍스트(ApplicationContext)**:
+   - `ApplicationContext`는 `BeanFactory`를 확장한 더 강력한 컨테이너로, 기본적으로 **빈의 생성과 관리**뿐만 아니라 **AOP(관점 지향 프로그래밍)**, **이벤트 처리**, **국제화** 등 다양한 기능을 제공한다.
+   - `ApplicationContext`는 주로 **스프링의 모든 기능을 사용하는 경우**에 사용된다.
+
+#### 스프링 컨테이너의 역할
+1. **빈 생성**: 스프링 컨테이너는 애플리케이션 실행 시 `@Configuration` 클래스나 XML 설정 파일을 기반으로 **빈을 생성**한다.
+2. **의존성 관리**: 빈 간의 의존 관계를 설정하고, 필요에 따라 **의존 객체를 주입**한다.
+3. **빈 라이프사이클 관리**: 스프링은 빈의 **생성, 초기화, 소멸**을 관리한다. `@PostConstruct`, `@PreDestroy`와 같은 어노테이션을 사용하여 초기화/소멸 작업을 추가할 수 있다.
+4. **AOP 지원**: 스프링은 **관점 지향 프로그래밍(AOP)**을 통해 트랜잭션 관리, 로깅 등을 스프링 컨테이너가 관리하는 빈에 적용할 수 있다.
+5. **이벤트 처리**: 애플리케이션 내에서 발생한 이벤트를 처리하는 기능을 제공한다.
+
+#### 스프링 컨테이너 예시
+
+1. `@Component` 사용 예시 (빈 정의)
+```java
+@Component
+public class UserService {
+    public void createUser(String name) {
+        System.out.println("User " + name + " created.");
+    }
+}
+```
+
+2. `@Configuration`과 `@Bean`을 통한 빈 정의
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public UserService userService() {
+        return new UserService();
+    }
+}
+```
+
+3. 의존성 주입 예시 (생성자 주입)
+```java
+@Component
+public class UserController {
+
+    private final UserService userService;
+
+    // 생성자 주입
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    public void createUser(String name) {
+        userService.createUser(name);
+    }
+}
+```
+
+#### 스프링 컨테이너 사용
+
+1. **스프링 애플리케이션 컨텍스트 생성**:
+   ```java
+   AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+   ```
+
+2. **빈 가져오기**:
+   ```java
+   UserService userService = context.getBean(UserService.class);
+   userService.createUser("John Doe");
+   ```
+
+3. **컨텍스트 종료**:
+   ```java
+   context.close();
+   ```
+
+#### 핵심 요약
+- **스프링 컨테이너**는 애플리케이션의 핵심 객체인 **빈(Bean)**을 관리하며, **의존성 주입(DI)**을 통해 객체 간의 결합도를 낮추고 유연성을 제공한다.
+- `ApplicationContext`는 빈 생성, 의존성 주입, AOP 지원, 이벤트 처리 등 다양한 기능을 제공한다.
+- 개발자는 스프링 컨테이너를 사용하여 **객체의 생명주기**와 **의존 관계**를 쉽게 관리하고, 애플리케이션을 모듈화할 수 있다.
+
+스프링 컨테이너에 대한 이해는 스프링 프레임워크의 핵심을 잘 이해하는 데 중요한 첫 걸음이다.
+
+#### 구조
 
 1. Spring Container
 
@@ -86,6 +250,9 @@ tags: [spring]
 - 스프링 부트에 내장된 Tomcat, Jetty, Undertow 등의 웹 서버
 
 - 구조
+
+![spring-mvc]({{site.url}}/PostImages/2024-06-18-spring_boot_intro/spring-mvc.png)
+
 
 ![spring embeded server]({{site.url}}/PostImages/2024-06-18-spring_boot_intro/1.png)
 
@@ -103,15 +270,19 @@ tags: [spring]
 
 5. 핸들러 매핑(HandlerMapping): DispatcherServlet은 HandlerMapping을 사용하여 어떤 컨트롤러가 요청을 처리할지 결정합니다.
 
-6. 컨트롤러(@Controller): 핸들러 매핑에 따라 요청을 처리할 컨트롤러가 결정되고, 해당 컨트롤러가 요청을 처리합니다.
+6. HandlerAdapter : HandlerMapping에서 결정된 핸들러 정보로 해당 메소드를 직접 호출해주는 역할을 한다.
 
-7. 서비스 레이어(Service Layer): 컨트롤러는 비즈니스 로직을 처리하기 위해 서비스 레이어를 호출합니다.
+7. 컨트롤러(@Controller): 핸들러 매핑에 따라 요청을 처리할 컨트롤러가 결정되고, 해당 컨트롤러가 요청을 처리합니다.
 
-8. 레포지토리 레이어(Repository Layer): 서비스 레이어는 데이터베이스 작업을 위해 레포지토리 레이어를 호출합니다.
+8. 서비스 레이어(Service Layer): 컨트롤러는 비즈니스 로직을 처리하기 위해 서비스 레이어를 호출합니다.
 
-9. 뷰 리졸버(ViewResolver): 요청 처리 후, DispatcherServlet은 ViewResolver를 사용하여 응답할 뷰를 결정합니다.
+9. 레포지토리 레이어(Repository Layer): 서비스 레이어는 데이터베이스 작업을 위해 레포지토리 레이어를 호출합니다.
 
-10. 뷰(View): 최종적으로 결정된 뷰를 통해 사용자에게 응답이 전송됩니다.
+10. 뷰 리졸버(ViewResolver): 요청 처리 후, DispatcherServlet은 ViewResolver를 사용하여 응답할 뷰를 결정합니다.
+
+11. 디스패처 서블릿은 컨트롤러에서 뷰에 전달할 데이터를 추가한다.
+
+12. 데이터가 추가된 뷰를 반환한다.
 
   </div>
 </details>

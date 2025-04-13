@@ -538,6 +538,82 @@ public interface Gadget {
 Gadget.resetSettings(); // 정적 메서드 호출
 ```
 
+---
+
+## Math
+
+C++에서 수학 함수를 제공하는 `<cmath>` 헤더와 **유사한 역할을 Java에서 수행하는 클래스는 `java.lang.Math`**이다.
+
+Java에서는 기본적으로 `Math` 클래스에 다양한 **수학 함수**들이 포함되어 있고, 이는 **static 메서드**로 제공된다.  
+추가적으로, **고급 수학 함수**는 `StrictMath`, `BigDecimal`, `BigInteger` 등에서도 제공한다.
+
+
+```java
+import java.lang.Math; // 생략 가능 (java.lang 패키지는 자동 import)
+```
+
+### 주요 기능 비교 (C++ vs Java)
+
+| 기능                 | C++ `<cmath>` 함수      | Java `Math` 메서드               |
+|----------------------|-------------------------|----------------------------------|
+| 절댓값               | `abs(x)`                | `Math.abs(x)`                    |
+| 제곱근               | `sqrt(x)`               | `Math.sqrt(x)`                   |
+| 거듭제곱             | `pow(x, y)`             | `Math.pow(x, y)`                 |
+| 삼각함수             | `sin(x), cos(x)`        | `Math.sin(x), Math.cos(x)`       |
+| 로그                 | `log(x)` (자연로그)     | `Math.log(x)`                    |
+| 상용로그             | `log10(x)`              | `Math.log10(x)`                  |
+| 지수 함수            | `exp(x)`                | `Math.exp(x)`                    |
+| 반올림/내림/올림     | `round, floor, ceil`    | `Math.round, Math.floor, Math.ceil` |
+| 최소/최대            | `min(x,y), max(x,y)`    | `Math.min(x, y), Math.max(x, y)` |
+| 나머지               | `fmod(x, y)`            | `Math.IEEEremainder(x, y)` 또는 `%` |
+| 삼각역함수           | `asin, acos, atan`      | `Math.asin, Math.acos, Math.atan` |
+| 하이퍼볼릭 함수      | `sinh, cosh, tanh`       | `Math.sinh, Math.cosh, Math.tanh` |
+| π, e 상수            | `M_PI`, `M_E` 등         | `Math.PI`, `Math.E`              |
+
+
+### 사용 예시
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        double x = -3.14;
+        double y = 2.0;
+
+        System.out.println("abs: " + Math.abs(x));          // 3.14
+        System.out.println("sqrt: " + Math.sqrt(16));       // 4.0
+        System.out.println("pow: " + Math.pow(2, 3));       // 8.0
+        System.out.println("sin: " + Math.sin(Math.PI / 2)); // 1.0
+        System.out.println("log: " + Math.log(Math.E));     // 1.0
+        System.out.println("ceil: " + Math.ceil(x));        // -3.0
+        System.out.println("floor: " + Math.floor(x));      // -4.0
+        System.out.println("round: " + Math.round(x));      // -3
+    }
+}
+```
+
+### 고정 소수점 계산이 필요할 경우
+
+Java는 `float`, `double`이 정확하지 않기 때문에, **정밀한 계산이 필요한 경우** `BigDecimal`을 사용한다.
+
+```java
+import java.math.BigDecimal;
+
+BigDecimal a = new BigDecimal("1.1");
+BigDecimal b = new BigDecimal("2.2");
+
+BigDecimal result = a.add(b);
+System.out.println(result); // 3.3
+```
+
+### 요약
+
+| 항목 | Java에서 사용하는 클래스 |
+|------|---------------------------|
+| 기본 수학 함수 | `java.lang.Math` |
+| 고정 소수점 | `java.math.BigDecimal` |
+| 큰 정수 계산 | `java.math.BigInteger` |
+| 더 정확한 계산 (완전 재현용) | `StrictMath` |
+
 
 ---
 
@@ -1126,7 +1202,7 @@ JVM은 Lazy Loading 메커니즘을 사용한다.
 
 1. **필드가 원시 타입인 경우**: final 키워드를 사용해 불변 객체를 만들 수 있다.
 2. **필드가 일반 객체 참조 변수인 경우**:  객체를 사용하는 필드의 참조 변수도 불변 객체로 변경
-3. **필드가 배열, 리스트 등의 참조 변수인 경우**:  생성시 새로운 List를 만들어 값을 복사하도록 해야한다. (list등은 기본적으로 깊은 복사인데 이를 방어적 복사(defensive-copy)라고한다.)
+3. **필드가 배열, 리스트 등의 참조 변수인 경우**:  생성시 새로운 List를 만들어 값을 복사하도록 해야한다. (깊은 복사를 방어적 복사(defensive-copy)라고한다.)
 
 ### 클래스의 초기화 시점에
 
@@ -1303,7 +1379,6 @@ List<?> list = new ArrayList<>();
 list = new ArrayList<Integer>();  // OK
 list = new ArrayList<Double>();   // OK
 ```
-
 
 
 ### 참고
